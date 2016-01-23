@@ -1,5 +1,5 @@
 # BibTeX_FHTW
-BibTeX file, based on Harvard Citation style (agsm.bst, alpha.bst) with more destinct media types
+Harvard Style-like citation via BibTeX with more destinct media types, based on Harvard Citation style (agsm.bst, alpha.bst)
 
 Author: Michael Widrich
 
