@@ -1,0 +1,137 @@
+% Encoding = UTF-8
+
+% LaTeX Template for demonstration of BibTeX Style.
+%
+% Created by M. Widrich (BMR6) in January 2012, tested by W. Kubinger in March 2012 and modified in January 2016 by Michael Widrich
+%
+% Originally created for FH Technikum Wien, Studiengang Mechatronik/Robotik, new standards may vary.
+%
+% Disclaimer: I modified/created the files "HarvardFHTWMR.bst" and "literatur.bib" as a tool for anyone who wants to use it. I can not issue any guarantee about the correctness of its output. However, I hope it's able to save you time and trouble with the quotations.
+%
+
+\documentclass[a4paper,bibtotoc,oneside]{scrbook}
+
+\usepackage{hyperref}
+
+\usepackage[english, german]{babel}
+
+\usepackage{amsmath}
+
+
+\usepackage{harvard}
+
+
+\begin{document}
+
+% Set citation style
+\bibliographystyle{HarvardFHTWMR}%Use HarvardFHTWMR.bst file
+\citationstyle{dcu}%Citation-style (Harvardand, ";" between citations, "," between author and year)
+\citationmode{abbr}%use "et al." with first citation
+% Configuration of citation style (use these macros for custom appearance)
+\newcommand{\citepic}[1]{(Source: \protect\cite{#1})}%Cite: Image
+\newcommand{\citefig}[2]{(Source: \protect\cite{#1}, p. #2)}%Cite: Image from document
+\newcommand{\citefigm}[2]{(Source: taken with modification from \protect\cite{#1}, p. #2)}%Cite: modified Image from document
+\newcommand{\citep}{\citeasnoun}%In-Line citations with \citep{} oder \citeasnoun{}
+\newcommand{\acessedthrough}{Available at:}%To be used for URLs
+\newcommand{\acessedthroughp}{Available through:}%To be used for URLs (protected database, access through portal (e.g. university library)
+\newcommand{\acessedat}{Accessed}%To be used for URL date
+\newcommand{\singlepage}{p.}%To be used for page reference
+\newcommand{\multiplepages}{pp.}%To be used for page reference (multiple pages)
+\newcommand{\chapternr}{Ch.}%To be used for chapter reference
+\renewcommand{\harvardand}{\&}%Harvardand in citations
+\newcommand{\abstractonly}{Abstract only}%To be used for abstract-only references
+\newcommand{\edition}{~edition}%Edition -> note, that you have to write "edition = {2nd},"!
+
+
+% title page:
+\thispagestyle{empty}
+\begin{center}
+\begin{Huge}
+HarvardFHTWMR BibTeX Style
+\end{Huge}
+
+\vspace{20pt}
+\begin{LARGE}
+Manual
+\end{LARGE}
+\end{center}
+
+
+\newpage
+
+\tableofcontents\thispagestyle{empty}
+\newpage
+
+\chapter{Anmerkungen zum MR-Zitierstandard}
+
+\section{Verwendung von BibTeX}
+
+Das Literaturverzeichnis wird automatisch generiert. Die Quellenangaben befinden sich in der Datei "`*.bib''. Zur einfachen Recherche der Literaturquellen-Daten empfiehlt sich auch \textit{google-scholar} (\url{scholar.google.de}). Dazu wird unter den "`Einstellungen'' (rechts oben) die Option  "`\textbf{Bibliographiemanager}: Links zum Importieren von Literaturverweisen in BibTeX anzeigen.'' aktiviert. Danach kann eine Literaturquelle gesucht und durch einen Klick auf "`In BibTeX importieren'' die Informationen per Copy\& Paste "ubernommen werden.\\
+
+Kompiliert wird "uber bibtex mit pdflatex oder PS bzw. DVI.
+F"ur diese Vorlage z.B. mit pdflatex$\rightarrow$bibtex$\rightarrow$bibtex$\rightarrow$pdflatex$\rightarrow$pdflatex. Die URL-Darstellung und die PDF Eigenschaften sowie die r"omische Nummerierung im PDF vor dem Hauptteil werden mit dem hypersetup bzw. \textbackslash pagenumbering\{\} generiert.\\
+
+
+\section{Zitate ``im Text''}
+
+In-Line Zitate k"onnen mit \textbackslash citeasnoun\{Quelle\} oder \textbackslash citep\{Quelle\} durchgef"uhrt werden. Bei mehreren Autoren sind die Quellen-Namen nach der Jahreszahl zu ordnen.
+
+Beispiele f"ur Zitate ``im Text'': nach \citeasnoun{Braun07} und \citeasnoun{Kastner11} oder \citep{Kessler11}.\\
+
+\section{Zitate ``nicht direkt im Text''}
+
+``Normale'' Zitate in Klammer werden mit \textbackslash cite\{Quelle\} erzeugt. Bei mehreren Autoren sind die Quellen-Namen durch einen Beistrich zu trennen und nach der Jahreszahl zu ordnen.
+
+Beispiele f"ur Zitate ``nicht direkt im Text'': \cite{Technikum11} bzw. \cite{Bach82,Zettler98,Astrom01}.
+
+\section{Mehrere Werke des selben Autors im selben Jahr}
+
+Bei mehreren Zitaten vom selben Autor im selben Jahr ist die Jahreszahl mit ``a'', ``b'', etc. zu erweitern (siehe *.bib-Datei).
+
+Beispiele f"ur mehrere Zitate des selben Autors im selben Jahr: \cite{Aangerman09a} und \cite{Aangerman09b}.\\
+
+\section{Abk"urzung mit ``et al.''}
+
+Bei mehr als zwei Autoren wird automatisch mit ``et al.'' abgek"urzt: \cite{Zettler98}.
+
+\section{Bildbeschriftungen}
+
+Es gibt folgende Markos f"ur Quellenangabe bei fremden Fotos/Bildern:
+
+\begin{itemize}
+\item Referenz auf Foto/Bild: \textbackslash citepic\{Hemetsberger07\} $\overset{wird zu}{\Longrightarrow}$ \citepic{Hemetsberger07}
+\item Referenz auf Foto/Bild aus Dokument: \textbackslash citefig\{Lund92\}\{99\} $\overset{wird zu}{\Longrightarrow}$ \citefig{Lund92}{99}
+\item Referenz auf modifiziertes Foto/Bild aus Dokument: \textbackslash citefigm\{Lund92\}\{150\} $\overset{wird zu}{\Longrightarrow}$ \citefigm{Lund92}{150}
+\end{itemize}\ \\
+
+\section{Verf"ugbare Medientypen}
+Folgende Medientypen sind zur Zeit m"oglich:
+
+\begin{itemize}
+\item Bachelorarbeit/Projektbericht/etc.: \cite{Baldinger10,Piringer11}.
+\item Buch: \cite{Aangerman09a,Aangerman09b}.
+\item Datenblatt, Leitfaden: \cite{Anglia10,Atmel11}.
+\item E-Abstract (Nur Abstract verf"ugbar): \cite{Astrom01}.
+\item E-Book: \cite{Kastner11}.
+\item E-Book (Zugang durch FH): \cite{Kessler11}.
+\item E-Magazin oder E-Journal: \cite{Lund92,Zinner07}.
+\item E-Magazin oder E-Journal (Zugang durch FH): \cite{Bach82}.
+\item Edited Book: \cite{Braun07,Braun10}.
+\item Kapitel in einem Edited Book: \cite{Samson70,Smith75}.
+\item Masterthese/Dissertation: \cite{Pohn10,Humenberger11}.
+\item Normen: \cite{ISO98}.
+\item Paper, Konferenzbeitrag, Journalartikel: \cite{Zettler98,Gesztesy00}.
+\item Patent: \cite{Anderson10}.
+\item Photographien, Bilder: \cite{Hemetsberger07}.
+\item Photographien, Bilder (online): \cite{Dean08}.
+\item Website: \cite{Technikum11}.
+\item Zeitung: \cite{Slapper05}.
+\item Zeitung (online): \cite{Chittenden03}.
+\end{itemize}
+
+
+% Literaturverzeichnis
+\bibliography{literatur.bib}
+\newpage
+
+\end{document}

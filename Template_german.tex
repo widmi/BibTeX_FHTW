@@ -1,0 +1,136 @@
+% Encoding = UTF-8
+
+% LaTeX Vorlage zur Demonstration des BibTeX Styles.
+%
+% Erstellt von Michael Widrich im Jänner 2012, getestet durch W. Kubinger im März 2012 und angepasst im Jänner 2016 von Michael Widrich
+%
+% Ursprünglich erstellt für FH Technikum Wien, Studiengang Mechatronik/Robotik, neue Standards können abweichen.
+%
+% Disclaimer: I modified/created the files "HarvardFHTWMR.bst" and "literatur.bib" as a tool for anyone who wants to use it. I can not issue any guarantee about the correctness of its output. However, I hope it's able to save you time and trouble with the quotations.
+%
+
+\documentclass[a4paper,bibtotoc,oneside]{scrbook}
+
+\usepackage{hyperref}
+
+\usepackage[english, german]{babel}
+
+\usepackage{amsmath}
+
+
+\usepackage{harvard}
+
+
+\begin{document}
+%Festlegen des Zitier-Standards
+\bibliographystyle{HarvardFHTWMR}%Zitierstandard FH Technikum Wien, Studiengang Mechatronik/Robotik
+\citationstyle{dcu}%Correct citation-style (Harvardand, ";" between citations, "," between author and year)
+\citationmode{abbr}%use "et al." with first citation
+% Konfiguration der Makros
+\newcommand{\citepic}[1]{(Quelle: \protect\cite{#1})}%Zitat: Bild
+\newcommand{\citefig}[2]{(Quelle: \protect\cite{#1}, S. #2)}%Zitat: Bild aus Dokument
+\newcommand{\citefigm}[2]{(Quelle: modifiziert "ubernommen aus \protect\cite{#1}, S. #2)}%Zitat: modifiziertes Bild aus Dokument
+\newcommand{\citep}{\citeasnoun}%In-Line Zitiat entweder mit \citep{} oder \citeasnoun{}
+\newcommand{\acessedthrough}{Verf{\"u}gbar unter:}%Für URL-Angabe
+\newcommand{\acessedthroughp}{Verf{\"u}gbar bei:}%Für URL-Angabe (Geschützte Datenbank, Zugriff durch FH)
+\newcommand{\acessedat}{Zugang am}%Für URL-Datum-Angabe
+\newcommand{\singlepage}{S.}%Für Seitenangabe (einzelne Seite)
+\newcommand{\multiplepages}{S.}%Für Seitenangabe (mehrere Seiten)
+\newcommand{\chapternr}{K.}%Für Kapitelangabe
+\renewcommand{\harvardand}{\&}%Harvardand in Zitaten
+\newcommand{\abstractonly}{ausschließlich Abstract}
+\newcommand{\edition}{. Auflage}%Angabe der Auflage
+
+
+% title page:
+\thispagestyle{empty}
+\begin{center}
+\begin{Huge}
+HarvardFHTWMR BibTeX Style
+\end{Huge}
+
+\vspace{20pt}
+\begin{LARGE}
+Manual
+\end{LARGE}
+\end{center}
+
+
+\newpage
+
+\tableofcontents\thispagestyle{empty}
+\newpage
+
+\chapter{Anmerkungen zum MR-Zitierstandard}
+
+\section{Verwendung von BibTeX}
+
+Das Literaturverzeichnis wird automatisch generiert. Die Quellenangaben befinden sich in der Datei "`*.bib''. Zur einfachen Recherche der Literaturquellen-Daten empfiehlt sich auch \textit{google-scholar} (\url{scholar.google.de}). Dazu wird unter den "`Einstellungen'' (rechts oben) die Option  "`\textbf{Bibliographiemanager}: Links zum Importieren von Literaturverweisen in BibTeX anzeigen.'' aktiviert. Danach kann eine Literaturquelle gesucht und durch einen Klick auf "`In BibTeX importieren'' die Informationen per Copy\& Paste "ubernommen werden.\\
+
+Kompiliert wird "uber bibtex mit pdflatex oder PS bzw. DVI.
+F"ur diese Vorlage z.B. mit pdflatex$\rightarrow$bibtex$\rightarrow$bibtex$\rightarrow$pdflatex$\rightarrow$pdflatex. Die URL-Darstellung und die PDF Eigenschaften sowie die r"omische Nummerierung im PDF vor dem Hauptteil werden mit dem hypersetup bzw. \textbackslash pagenumbering\{\} generiert.\\
+
+
+\section{Zitate ``im Text''}
+
+In-Line Zitate k"onnen mit \textbackslash citeasnoun\{Quelle\} oder \textbackslash citep\{Quelle\} durchgef"uhrt werden. Bei mehreren Autoren sind die Quellen-Namen nach der Jahreszahl zu ordnen.
+
+Beispiele f"ur Zitate ``im Text'': nach \citeasnoun{Braun07} und \citeasnoun{Kastner11} oder \citep{Kessler11}.\\
+
+\section{Zitate ``nicht direkt im Text''}
+
+``Normale'' Zitate in Klammer werden mit \textbackslash cite\{Quelle\} erzeugt. Bei mehreren Autoren sind die Quellen-Namen durch einen Beistrich zu trennen und nach der Jahreszahl zu ordnen.
+
+Beispiele f"ur Zitate ``nicht direkt im Text'': \cite{Technikum11} bzw. \cite{Bach82,Zettler98,Astrom01}.
+
+\section{Mehrere Werke des selben Autors im selben Jahr}
+
+Bei mehreren Zitaten vom selben Autor im selben Jahr ist die Jahreszahl mit ``a'', ``b'', etc. zu erweitern (siehe *.bib-Datei).
+
+Beispiele f"ur mehrere Zitate des selben Autors im selben Jahr: \cite{Aangerman09a} und \cite{Aangerman09b}.\\
+
+\section{Abk"urzung mit ``et al.''}
+
+Bei mehr als zwei Autoren wird automatisch mit ``et al.'' abgek"urzt: \cite{Zettler98}.
+
+\section{Bildbeschriftungen}
+
+Es gibt folgende Markos f"ur Quellenangabe bei fremden Fotos/Bildern:
+
+\begin{itemize}
+\item Referenz auf Foto/Bild: \textbackslash citepic\{Hemetsberger07\} $\overset{wird zu}{\Longrightarrow}$ \citepic{Hemetsberger07}
+\item Referenz auf Foto/Bild aus Dokument: \textbackslash citefig\{Lund92\}\{99\} $\overset{wird zu}{\Longrightarrow}$ \citefig{Lund92}{99}
+\item Referenz auf modifiziertes Foto/Bild aus Dokument: \textbackslash citefigm\{Lund92\}\{150\} $\overset{wird zu}{\Longrightarrow}$ \citefigm{Lund92}{150}
+\end{itemize}\ \\
+
+\section{Verf"ugbare Medientypen}
+Folgende Medientypen sind zur Zeit m"oglich:
+
+\begin{itemize}
+\item Bachelorarbeit/Projektbericht/etc.: \cite{Baldinger10,Piringer11}.
+\item Buch: \cite{Aangerman09a,Aangerman09b}.
+\item Datenblatt, Leitfaden: \cite{Anglia10,Atmel11}.
+\item E-Abstract (Nur Abstract verf"ugbar): \cite{Astrom01}.
+\item E-Book: \cite{Kastner11}.
+\item E-Book (Zugang durch FH): \cite{Kessler11}.
+\item E-Magazin oder E-Journal: \cite{Lund92,Zinner07}.
+\item E-Magazin oder E-Journal (Zugang durch FH): \cite{Bach82}.
+\item Edited Book: \cite{Braun07,Braun10}.
+\item Kapitel in einem Edited Book: \cite{Samson70,Smith75}.
+\item Masterthese/Dissertation: \cite{Pohn10,Humenberger11}.
+\item Normen: \cite{ISO98}.
+\item Paper, Konferenzbeitrag, Journalartikel: \cite{Zettler98,Gesztesy00}.
+\item Patent: \cite{Anderson10}.
+\item Photographien, Bilder: \cite{Hemetsberger07}.
+\item Photographien, Bilder (online): \cite{Dean08}.
+\item Website: \cite{Technikum11}.
+\item Zeitung: \cite{Slapper05}.
+\item Zeitung (online): \cite{Chittenden03}.
+\end{itemize}
+
+
+% Literaturverzeichnis
+\bibliography{literatur.bib}
+\newpage
+
+\end{document}

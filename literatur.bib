@@ -1,0 +1,337 @@
+%Directly available media types: bachelorsthesis/etc., book, chapter of edited book, datasheet/guide, dissertation/mastersthesis, e-abstract (only abstract accessible), e-book, e-book (protected database accessed via university), edited book, journal, e-journal or e-magazine, e-journal or e-magazine (protected database accessed via university), newspaper, norm (ISO, etc.), online newspaper article, patent, picture/image/photograph, website.
+%
+%Notes:
+%  Copy&Paste the examples below and fill in the data. The first data element (e.g. "Aangerman09a") is used to cite the reference in LaTeX (e.g. "\cite{Aangerman09a}").
+%  If you use special characters(e.g. "ß"), use the LaTeX character instead (e.g. "{\ss}").
+%  If your editor does not support " ä, ö, ü " directly, you have to use " "a, "o, "u " instead. However, I recommend an editor like "Texmaker", where you can switch to ISO-8859-1 standard and don't have this problem.
+%  If a special author-name is needed, a "{}" has to be used (e.g. "{{International Standards Office}}"). Otherwise BibTeX will try to force a "last name, initials" schema (e.g. "{International Standards Office}" --> "International, S." but "{{International Standards Office}}" --> "International Standards Office")
+%  Only the referenced sources (referenced in your LaTeX-document via \cite, \citep, etc.) will be shown in the bibliography.
+%  The file "HarvardFHTWMR.bst" is needed for compilation.
+%  I modified/created this BibTeX file "HarvardFHTWMR.bst" and "Literatur.bib" as a tool for anyone who wants to use it. I can not issue any guarantee about the correctness of its output. However, I hope it's able to save you time and trouble with the quotations. Feel free to delete this header in "Literatur.bib".
+%
+% ~ Michael Widrich, 23.01.2012
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%bachelorsthesis/etc.
+@report{Baldinger10,
+		author				={Baldinger, A.},
+		title				={Improvement of NAOs speech synthesis and recognition skills},
+        publisher			={FH Technikum Wien, Bachelorstudiengang Mechatronik/Robotik},
+		address				={Wien},
+        year				={2010},
+        medium				={Bachelor Thesis},
+}
+
+@report{Piringer11,
+		author				={Piringer, G. and Milovanovic, G. and Grubm\"uller, T.},
+		title				={Schwei{\ss}zelle f\"ur einen Knickarmroboter},
+        publisher			={FH Technikum Wien, Bachelorstudiengang Mechatronik/Robotik},
+		address				={Wien},
+        year				={2011},
+        medium				={Projektbericht aus Mechatronics Lab I},
+}
+
+%book
+@book{Aangerman09a,
+		author				={Aangerman, D. and Nachname2, V.},
+		title				={Titel des Buches},
+	 	edition				={9},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2009a},
+}
+
+@book{Aangerman09b,
+		author				={Aangerman, D. and Nachname2, V.},
+		title				={Titel der Fortsetzung},
+	 	edition				={3},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2009b},
+}
+
+%chapter of edited book
+@edchapter{Smith75,
+  		title				={A source of information},
+  		author				={Smith, J.},
+  		year				={1975},
+  		booktitle			={One hundred and one ways to find information about health},
+  		editor				={W. Jones,~ed},
+  		bookyear			={2000},
+  		publisher			={Oxford University Press},
+  		address				={Oxford},
+  		chapter				={2},
+}
+
+@edchapter{Samson70,
+  		title				={Problems of information studies in history},
+  		author				={Samson, C.},
+  		year				={1970},
+  		booktitle			={Humanities information research},
+  		editor				={S. Stone,~ed},
+  		bookyear			={1980},
+  		publisher			={CRUS},
+  		address				={Sheffield},
+  		pages				={44-68},
+}
+
+%datasheet/guide
+@datasheet{Atmel11,
+		author				={{Atmel Corporation}},
+		title				={{Atmel ATmega16 - 8-bit Microcontroller with 16K Bytes In-System Programmable Flash}},
+        publisher			={Atmel},
+		address				={San Jose, United States},
+    	url					={http://www.atmel.com/dyn/resources/prod_documents/doc2466.pdf},
+    	urldate				={6.7.2011},
+        year				={2011},
+}
+
+@datasheet{Anglia10,
+		author				={{Anglia Ruskin University Library}},
+		title				={{Guide to the Harvard Style of Referencing}},
+	 	edition				={2},
+        publisher			={Anglia Ruskin University},
+		address				={Cambridge, UK},
+    	url					={http://libweb.anglia.ac.uk},
+    	urldate				={6.7.2011},
+        year				={2010},
+}
+
+%dissertation/mastersthesis
+@dissertation{Humenberger11,
+		author				={Humenberger, M.},
+		title				={Real-Time Stereo Matching for Embedded Systems in Robotic Applications},
+        level				={Dissertation},
+		university			={Technischen Universit\"at Wien, Fakult\"at f\"ur Elektrotechnik und Informationstechnik},
+        year				={2011},
+}
+
+@dissertation{Pohn10,
+		author				={Pohn, J.},
+		title				={Condition Monitoring Systeme f\"ur die zustandsorientierte Instandhaltung von Windkraftanlagen},
+        level				={Diplomarbeit},
+		university			={FH Technikum Wien, Masterstudiengang Innovations- und Technologiemanagement},
+        year				={2010},
+}
+
+%e-abstract (only abstract accessible)
+@eabstract{Astrom01,
+  		title				={Paper-Titel},
+  		author				={{\AA}str\"om, R. and Nachname2, V. and Nachname3, V.},
+  		journal				={Journaltitel},
+  		volume				={20},
+  		number				={5},
+  		pages				={645-651},
+  		year				={2001},
+  		publisher			={Journalverlag},
+  		address				={Wien},
+  		URL					={http://www.journalverlag.com},
+  		urldate				={4.10.2011},
+}
+
+%e-book
+@ebook{Kastner11,
+		author				={Kastner, T.},
+		title				={Titel des E-Books},
+	 	edition				={9},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2011},
+        url					={http://www.buchverlag.at},
+        urldate				={3.11.2011},
+}
+
+%e-book (protected database accessed via university)
+@ebook{Kessler11,
+		author				={Kessler, F.},
+		title				={Titel des E-Books},
+	 	edition				={9},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2011},
+        url					={http://www.buchverlag\"ubertechnikumwien.at},
+        urldate				={3.11.2011},
+        urllibary           ={Technikum Wien},
+}
+
+%edited book (if you add an author, it will be handled as normal "book")
+@book{Braun07,
+		editor				={Braun, G. and Nachname2, V. and Nachname3, V.},
+		title				={Titel des Buches},
+	 	edition				={2},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2007},
+}
+
+@book{Braun10,
+		editor				={Braun, G.},
+		title				={Titel des Buches},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2010},
+}
+
+%inproceedings
+@inproceedings{cormack2007spam,
+  title={Spam filtering for short messages},
+  author={Cormack, G.V. and G{\'o}mez Hidalgo, J.M. and S{\'a}nz, E.P.},
+  booktitle={Proceedings of the sixteenth ACM conference on Conference on information and knowledge management},
+  pages={313--320},
+  year={2007},
+    organization={Association for Computing Machinery (ACM)},
+  		location={Lisboa, Portugal},
+  		date={6--8 November 2007},
+  		address		={New York, USA},
+  		publisher ={ACM},
+}
+
+
+%journal
+@article{Gesztesy00,
+  		title				={{A new approach to inverse spectral theory, II. General real potentials and the connection to the spectral measure}},
+  		author				={Gesztesy, F. and Simon, B.},
+  		journal				={Annals of Math},
+  		volume				={152},
+  		number				={1},
+  		pages				={593-643},
+  		year				={2000},
+}
+
+@article{Zettler98,
+  		title				={Paper-Titel},
+  		author				={Zettler, U. and Nachname2, V. and Nachname3, V.},
+  		journal				={Journaltitel},
+  		volume				={20},
+  		number				={5},
+  		pages				={645-651},
+  		year				={1998},
+}
+
+%e-journal or e-magazine
+@emagazine{Lund92,
+  		title				={{Beitrags-Titel}},
+  		author				={Lund, H. and Nachname2, V. and Nachname3, V. and Nachname4, V.},
+  		journal				={E-Magazin-Titel},
+  		volume				={22},
+  		number				={4},
+  		pages				={20-25},
+  		year				={1992},
+  		URL					={http://www.magazinverlag.com},
+  		urldate				={24.8.2011},
+}
+
+@emagazine{Zinner07,
+  		title				={Pfelib: a performance primitives library for embedded vision},
+  		author				={Zinner, Ch. and Kubinger, W. and Isaacs, R.},
+  		journal				={EURASIP Journal on Embedded Systems},
+  		year				={2007},
+  		URL					={http://downloads.hindawi.com/journals/es/2007/049051.pdf},
+  		urldate				={6.7.2011},
+}
+
+%e-journal or e-magazine (protected database accessed via university)
+@earticle{Bach82,
+  		title				={Paper-Titel},
+  		author				={Bach, I. and Nachname2, V. and Nachname3, V. and Nachname4, V.},
+  		journal				={Journaltitel},
+  		volume				={22},
+  		number				={4},
+  		pages				={20-25},
+  		year				={1982},
+  		publisher			={Journalverlag},
+  		address				={Wien},
+  		URLDatabase			={Blackwell Science Synergy database},
+  		urldate				={4.10.2011},
+}
+
+%newspaper article
+@newspaper{Slapper05,
+  		title				={{Corporate manslaughter: new issues for lawyers}},
+  		author				={Slapper, G.},
+  		journal				={The Times},
+  		date				={3 Sep.},
+  		pages				={4b},
+  		year				={2005},
+}
+
+%norm (ISO, etc.)
+@norm{ISO98,
+		author				={{International Standards Office}},
+		title				={{ISO 690 - 2 Information and documentation: Bibliographical references: Electronic documents}},
+        publisher			={ISO},
+		address				={Genf},
+        year				={1998},
+}
+
+%online newspaper article
+@enewspaper{Chittenden03,
+  		title				={{Focus: `Targetitis ails NHS}},
+  		author				={Chittenden, M. and Rogers, L. and Smith, D.},
+  		journal				={Times Online},
+  		date				={1 Juni},
+  		year				={2003},
+    	url					={http://www.timesonline.co.uk/tol/news/uk/scotland/article1138006.ece},
+    	urldate				={17.03.2005},  		
+}
+
+%patent
+@patent{Anderson10,
+		author				={{Anderson, N.W.}},
+		title				={Asymmetric stereo vision system},
+        patentnr			={EU Patent EP2296072},
+        year				={2010},
+}
+
+%picture/image/photograph
+@picture{Hemetsberger07,
+		author				={Hemetsberger, H.},
+		title				={{AIT Stereo Sensor im Einsatz w\"ahrend der DARPA Urban Challenge 2007}},
+        note				={AIT Austrian Institute of Technology},
+        year				={2007},
+        medium				={Fotographie},
+}
+
+@picture{Dean08,
+		author				={Dean, R.},
+		title				={{Tales from Topographic Oceans}},
+		url					={http://rogerdean.com/store/product_info.php?cPath=4&products_id=88},
+        urldate				={18.6.2008},
+        year				={2008},
+        medium				={electronic print},
+}
+
+%website
+@website{Google,
+		author				={{Google}},
+		title				={Google},
+    	url					={http://www.technikum-wien.at},
+    	urldate				={3.8.2011},
+}
+
+%website
+@website{Technikum11,
+		author				={{Technikum Wien}},
+		title				={Hauptseite},
+        publisher			={Technikum Wien},
+		address				={Wien},
+    	url					={http://www.technikum-wien.at},
+    	urldate				={3.8.2011},
+    	year				={2011},
+}
+
+%other medium, based on book
+@book{ebook1,
+		author				={Kastner, T.},
+		title				={Titel des E-Books},
+	 	edition				={9},
+        publisher			={Buchverlag},
+		address				={Wien},
+        year				={2011},
+        url					={http://www.buchverlag.at},
+        urldate				={3.11.2011},
+        medium				={e-Book},
+}
+
+%manually
+\harvarditem [abbr-citation]{full-citation}{citation-year}{cite-key}
